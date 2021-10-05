@@ -17,17 +17,17 @@ with open(input_data, 'r') as csv_file:
     for row in budget_data:
         month_list.append(row)
         total_months = len(month_list)
-    print (f"total months is {str(total_months)}")
-
-    amount_list.append(row)
-    total_amount = sum(budget_data)
+    print (f"total months is {total_months}")
+    #print (month_list[0])
 
 
-print(total_amount)
+    #amount_list.append(row)
+    #total_amount = sum(budget_data)
 
 
-# Calculate # months in dataset
-# Use date column as dataset
-#def calc_num_months(Date)
+#print(total_amount)
+
+
+#    df.to_csv(filename) | Write to a CSV file
 
 
