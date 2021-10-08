@@ -1,28 +1,48 @@
 import os
 import csv
 
-month_list = []
-amount_list = []
+months_list = []
+PL_list = []
 
 os.getcwd()
 os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyBank/Resources")
 os.getcwd()
 
-# Path to source data file
+# Path to source data
 input_data = os.path.join("budget_data.csv")
+
+# Path to output file
+output_file = os.path.join("budget_analysis.txt")
 
 # Read in CSV file
 with open(input_data, 'r') as csv_file:
-    budget_data = csv.DictReader(csv_file)
+    budget_data = csv.reader(csv_file, delimiter=",")
+    header = next(budget_data)
+    
+    # count months
     for row in budget_data:
-        month_list.append(row)
-        total_months = len(month_list)
+        months_list.append(row)
+        PL_list.append(int(row[1]))
+
+
+        total_months = len(months_list)
     print (f"total months is {total_months}")
-    #print (month_list[0])
+
+    net_total = sum(PL_list)
+    print (f"net total is ${net_total}")
+
+    # calulate net total
+    #for row in range(total_months)
+    #nettotal = nettotal +
+
+
+
+
+
 
 
     #amount_list.append(row)
-    #total_amount = sum(budget_data)
+    
 
 
 #print(total_amount)
