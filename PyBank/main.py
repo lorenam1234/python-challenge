@@ -51,7 +51,7 @@ with open(input_data, 'r') as csv_file:
     decreased_month = (months_list[decreased_idx])
 
     # Display output
-    output
+    #output
     print (f"total months is {total_months}")  
     print (f"net total is $" + str(net_total))
     print (f"Avg change is ${round((avg_change),2)}")
