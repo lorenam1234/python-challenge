@@ -8,8 +8,7 @@ os.getcwd()
 # Path to source data
 input_data = os.path.join("election_data.csv")
 
-# Path to output file
-output_file = os.path.join("election_analysis.txt")
+
 
 votes_list = []
 election_list = []
@@ -28,22 +27,52 @@ with open(input_data, 'r') as csv_file:
         votes_list.append(row)
         total_votes = len(votes_list)
         election_list.append(row)
-
         candidate_list.append(row[2])
-        
     unique_list = list(set(candidate_list))
-
-    for x in unique_list:
-         candidatecount = candidate_list.count(x)
-         voterpercentage = int(candidatecount) / int(total_votes) * 100
-         #candidatevotes.append(candidatecount)
-         #votepercentage.append(int(candidatecount) / int(total_votes) * 100)
-         print(f"{x}: {voterpercentage} ({candidatecount})")
-    
-    
-    
-    
+    cand_len = len(unique_list)
 
 
+print (f" ")
+print (f" ")
+print (f"Election Results")
+print (f"-------------------------")
+print (f"Total Votes:  {total_votes}")
+print (f"-------------------------")
 
-    print (f"total votes is {total_votes}")    
+for x in unique_list:
+    candidatevotes = candidate_list.count(x)
+    voterpercentage = float(candidatevotes) / float(total_votes) * 100
+    print(f"{x}: {voterpercentage:.3f}% ({candidatevotes})")  
+    percentage = str(voterpercentage)
+    votes = str(candidatevotes)
+    winningvote = max(votes)
+    winner = unique_list[votes.index(winningvote)]
+
+print (f"-------------------------")
+print (f"Winner: " + str(winner) + "")
+print (f"-------------------------")  
+print (f" ")
+print (f" ") 
+    
+# Path to output file
+os.getcwd()
+os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyPoll/analysis")
+os.getcwd()
+
+output_file = os.path.join("election_analysis.txt")
+
+with open(output_file,'w') as text:
+    text.write(" \n")
+    text.write(" \n")
+    text.write("Election Results\n")
+    text.write("-------------------------\n")
+    text.write("Total Votes: " + str(total_votes) + "\n")
+    text.write("-------------------------\n")
+           
+    for x in range(len(unique_list)):
+        #text.write({unique_list[x]}percentage[x]}({votes[x]})+"\n")    
+        text.write("-------------------------\n")
+        text.write("Winner: (winner)\n")
+        text.write("-------------------------\n")  
+        text.write(" \n")
+        text.write(" \n") 

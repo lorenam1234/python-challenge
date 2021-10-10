@@ -13,9 +13,6 @@ os.getcwd()
 # Path to source data
 input_data = os.path.join("budget_data.csv")
 
-# Path to output file
-output_file = os.path.join("budget_analysis.txt")
-
 # Read in CSV file
 with open(input_data, 'r') as csv_file:
     budget_data = csv.reader(csv_file, delimiter=",")
@@ -52,13 +49,34 @@ with open(input_data, 'r') as csv_file:
 
     # Display output
     #output
-    print (f"total months is {total_months}")  
-    print (f"net total is $" + str(net_total))
-    print (f"Avg change is ${round((avg_change),2)}")
-    print (f"biggest increase {increased_month[0]} $ {increased_profit}")
-    print (f"biggest decrease {decreased_month[0]} $ {decreased_profit}")
+    print (f" ")
+    print (f" ")
+    print (f"Financial Analysis")
+    print (f"-------------------------")
+    print (f"Total Months: {total_months}")  
+    print (f"Total: $" + str(net_total))
+    print (f"Average Change: ${round((avg_change),2)}")
+    print (f"Greatest Increase in Profits: {increased_month[0]} $ {increased_profit}")
+    print (f"Greatest Decrease in Profits: {decreased_month[0]} $ {decreased_profit}")
+    print (f" ")
+    print (f" ")
 
+# Path to output file
+os.getcwd()
+os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyBank/analysis")
+os.getcwd()
 
-  
+output_file = os.path.join("budget_data_analysis.txt")
 
-#    df.to_csv(filename) | Write to a CSV file
+with open(output_file,'w') as text:
+    text.write(" \n")
+    text.write(" \n")
+    text.write("Financial Analysis\n")
+    text.write("-------------------------\n")
+    text.write("Total Months: " + str(total_months) +"\n")  
+    text.write("Total: $" + str(net_total) + "\n")
+    text.write("Average Change: $ " + str(avg_change) +"\n")
+    text.write("Greatest Increase in Profits: " + str(increased_month) + " $" + str(increased_profit)+ "\n")
+    text.write("Greatest Decrease in Profits: " + str(decreased_month) + " $" + str(decreased_profit)+ "\n")
+    text.write(" ")
+    text.write(" ")
