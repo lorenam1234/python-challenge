@@ -1,17 +1,12 @@
 import os
 import csv
 
+# Path to source data
+input_data = os.path.join("budget_data.csv")
+
 months_list = []
 PL_list = []
 change_list = []
-
-
-os.getcwd()
-os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyBank/Resources")
-os.getcwd()
-
-# Path to source data
-input_data = os.path.join("budget_data.csv")
 
 # Read in CSV file
 with open(input_data, 'r') as csv_file:
@@ -62,9 +57,6 @@ with open(input_data, 'r') as csv_file:
     print (f" ")
 
 # Path to output file
-os.getcwd()
-os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyBank/analysis")
-os.getcwd()
 
 output_file = os.path.join("budget_data_analysis.txt")
 

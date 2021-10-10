@@ -1,14 +1,8 @@
 import os
 import csv
 
-os.getcwd()
-os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyPoll/Resources")
-os.getcwd()
-
 # Path to source data
 input_data = os.path.join("election_data.csv")
-
-
 
 votes_list = []
 election_list = []
@@ -55,10 +49,6 @@ print (f" ")
 print (f" ") 
     
 # Path to output file
-os.getcwd()
-os.chdir("/Users/lorenamartinez/UTSA_BOOT_CAMP/HOMEWORK/HW3_PythonChallenge/python-challenge/PyPoll/analysis")
-os.getcwd()
-
 output_file = os.path.join("election_analysis.txt")
 
 with open(output_file,'w') as text:
